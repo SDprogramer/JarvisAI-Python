@@ -45,6 +45,7 @@ if __name__ == '__main__':
         text_input = take_command()
         if text_input:
             say(text_input)
+        # todo: Add more sites
         sites = [["youtube", "https://youtube.com"], ["wikipedia", "https://wikipedia.com"],
                  ["google", "https://google.com"], ["linkedin", "https://linkedin.com"]]
 
@@ -53,6 +54,7 @@ if __name__ == '__main__':
                 say(f"Opening {site[0]} Dear")
                 webbrowser.open(site[1])
 
+        # Todo: Play a specific song by taking name
         if "open music" in text_input:
             music_path = "E:/Programing/PythonProjects/JarvisAI/Songs/song.mp3"
             os.startfile(music_path)
@@ -61,7 +63,12 @@ if __name__ == '__main__':
             strfTime = datetime.datetime.now().strftime("%H:%M:%S")
             say(f"My dear the time is {strfTime}")
 
+        # Todo: MAke every application open
         if "open vs code".lower() in text_input.lower():
-            path = "E:/Vs Code/Microsoft VS Code/bin/Code.exe"
-            os.system(f"open {path}")
+            path = r"E:\Vs Code\Microsoft VS Code\Code.exe"
+            os.system(f'start "" "{path}"')
+
+        if "open google chrome".lower() in text_input.lower():
+            path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+            os.system(f'start "" "{path}"')
 
